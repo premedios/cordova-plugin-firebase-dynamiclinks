@@ -101,7 +101,7 @@ public class FirebaseDynamicLinksPlugin extends ReflectiveCordovaPlugin {
 
     private DynamicLink.Builder createDynamicLinkBuilder(JSONObject params) throws JSONException {
         DynamicLink.Builder builder = this.firebaseDynamicLinks.createDynamicLink();
-        builder.setDomainUriPrefix(params.optString("domainUriPrefix", this.domainUriPrefix));
+        builder.setDynamicLinkDomain(params.optString("domainUriPrefix", this.domainUriPrefix));
         builder.setLink(Uri.parse(params.getString("link")));
 
         JSONObject androidInfo = params.optJSONObject("androidInfo");
